@@ -11,7 +11,7 @@ Now you will need a directory for input data and for output data. For illustrati
 docker run -v /local/data/input:/data/input -v /local/data/output:/data/output -v /local/repo/GetYourBrainPipelined:/scripts jtduda/python-itk-sitk-ants:0.1.0 /scripts/example.sh
 
 This will run the following python programs:
-* save_input.py - prepopulate the input directory with some example data
+* save_inputs.py - prepopulate the input directory with some example data
 * smoothITK.py - smooth an image using the itk python module
 * smoothSimpleITK.py - smooth an image using the SimpleITK python module
 * smoothANTs.py - smooth an image using the ants python module
