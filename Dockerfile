@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
   python3-pip git \
   && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install numpy itk antspyx SimpleITK
+RUN pip3 install numpy itk antspyx SimpleITK itk-elastix
 
 #ENV FLYWHEEL=/flywheel/v0
 #RUN mkdir -p ${FLYWHEEL}
