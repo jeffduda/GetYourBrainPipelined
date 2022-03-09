@@ -16,5 +16,6 @@ This will run the following python programs:
 * smoothSimpleITK.py - smooth an image using the SimpleITK python module
 * smoothANTs.py - smooth an image using the ants python module
 * registrationANTs.py - simple registration using the ants python module
+* registrationSimpleITK.py - simple registration using the SimpleITK python module
 
 All outputs will be saved in the /local/data/output directory.
