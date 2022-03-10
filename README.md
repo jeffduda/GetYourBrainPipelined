@@ -19,3 +19,14 @@ This will run the following python programs:
 * registrationSimpleITK.py - simple registration using the SimpleITK python module
 
 All outputs will be saved in the /local/data/output directory.
+
+### Singularity
+To run via singularity, first pull via:
+
+singularity pull docker://jtduda/python-itk-sitk-ants:0.1.0
+
+To run the example:
+
+singularity run -B /local/data/input:/data/input -B /local/data/output:/data/output -B /local/repo/GetYourBrainPipelined:/scripts python-itk-sitk-ants_0.1.0.sif /scripts/example.sh
+
+
