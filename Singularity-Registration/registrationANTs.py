@@ -23,7 +23,8 @@ if len(sys.argv) > 3:
     fixed = ants.image_read(fixedFile)
 
     log.info("Run registration")
-    mytx = ants.registration(fixed=fixed , moving=moving, type_of_transform='SyN' )
+    mytx = ants.registration(fixed=fixed , moving=moving, type_of_transform='antsRegistrationSyNQuick[s]', verbose=True )
+    log.info("Apply transforms")
     mywarpedimage = ants.apply_transforms(fixed=fixed, moving=moving, transformlist=mytx['fwdtransforms'])
 
     log.info("Save output")
