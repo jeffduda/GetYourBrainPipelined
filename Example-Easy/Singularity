@@ -8,6 +8,13 @@ From: ubuntu:latest
 %post
     apt update
     apt install -y cowsay
+    echo "package data" /opt/pkg_data.txt
+
+%setup 
+    touch pkg_data.txt
+
+%files
+    pkg_data.txt /opt
 
 %runscript
     cowsay "Hello Example-Easy"
