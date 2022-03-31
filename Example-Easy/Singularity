@@ -9,7 +9,7 @@ From: ubuntu:latest
     apt update
     apt install -y cowsay
     mkdir /data
-    echo "package data" /opt/pkg_data.txt
+    echo "package data" > /opt/pkg_data.txt
 
 %setup 
     touch pkg_data.txt
