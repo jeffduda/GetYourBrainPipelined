@@ -6,15 +6,6 @@ From: jtduda/python-itk-sitk-ants:0.1.0
     export INPUT_DIR=/data/input
     export OUTPUT_DIR=/data/output
 
-%setup
-   touch save_inputs.py
-   touch smoothITK.py
-   touch smoothSimpleITK.py
-   touch smoothANTs.py
-   touch registrationANTs.py
-   touch registrationSimpleITK.py
-   touch example.sh
-
 %files
    save_inputs.py /opt/scripts
    smoothITK.py /opt/scripts
@@ -25,4 +16,6 @@ From: jtduda/python-itk-sitk-ants:0.1.0
    example.sh /opt/scripts
 
 %post
-    apt-get update
+   git clone https://github.com/jeffduda/GetYourBrainPipelined.git /opt/src
+   cp /opt/src/*.py /opt/scripts/.
+   cp /opt/src/*.sh /opt/scripts/.

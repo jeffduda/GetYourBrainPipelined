@@ -1,7 +1,39 @@
 # GetYourBrainPipelined
 Example scripts for setting up a brain processing pipeline
 
-## Running the example
+
+# Running on BIL
+from you home directory
+
+Get a repo, build a singularity image remotely, and run it
+```
+interact
+git clone https://github.com/jeffduda/GetYourBrainPipelined.git
+singularity build --remote example-easy.sif GetYourBrainPipelined/Example-Easy/Singularity
+singularity run example-easy.sif
+```
+
+Use that singularity image to run a command in the container
+```
+singularity exec example-easy.sif cowsay "exec Example-Easy"
+```
+
+Use the container to run a locally defined scripts that access local information
+```
+mkdir data
+echo "Local data" > data/data.txt
+echo '#!/bin/bash' > data/script.sh
+echo 'a=`cat $1`' >> data/script.sh
+echo 'cowsay $a' >> data/script.sh
+singularity exec -B /bil/users/jtduda/data:/data example-easy.sif sh /data/script.sh /data/data.txt
+```
+
+
+
+
+
+
+## Running the examples
 A 'Dockerfile' is provided to show how the image may be built. The build process takes a while so instead you may want to use a provided image that was created with the Dockerfile:
 
 docker pull jtduda/python-itk-sitk-ants:0.1.0
