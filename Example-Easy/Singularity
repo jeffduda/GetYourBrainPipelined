@@ -22,16 +22,15 @@ From: ubuntu:latest
     chmod a+x /opt/scripts/cow_script.sh
 
     # Example for existing available data
-    #wget -O /data/pkg_data.txt https://figshare.com/ndownloader/files/34645619
+    #wget -O /data/input/pkg_data_figshare.txt https://figshare.com/ndownloader/files/34645619
     
-
-
 # This does not work with a remote build instead we use
 # wget in the %post section. If building on your own 
 # system this would be the preferred way to include 
 # data in the container
 #%files
-#    pkg_data.txt /data
+#    pkg_data.txt /data/input
+#    cow_script.sh /opt/scripts
 
 %runscript
     cowsay "Hello Example-Easy"
