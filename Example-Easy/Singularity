@@ -9,7 +9,7 @@ From: ubuntu:latest
 
 %post
     apt-get update
-    apt-get install -y cowsay wget
+    apt-get install -y cowsay wget git
     mkdir /data_input /data_output /opt/repos
 
     # Get data from BIL to add to repo
