@@ -4,12 +4,24 @@ From: ubuntu:latest
 %environment
     export LC_ALL=C
     export PATH=/usr/games:$PATH
+    export INPUT_DIR=/data/input
+    export OUTPUT_DIR=/data/input
 
 %post
     apt-get update
     apt-get install -y cowsay wget
-    mkdir /data
-    wget -O /data/pkg_data.txt https://figshare.com/ndownloader/files/34645619
+    mkdir /data_input /data_output /opt/repos
+
+    # Get data from BIL to add to repo
+    # Directories starting at https://download.brainimagelibrary.org/hackathon/2022_GYBS are web-accessible
+    wget -O /data_input/pkg_data.txt https://download.brainimagelibrary.org/hackathon/2022_GYBS/src/Tutorials/GetYourBrainPipelined/Example-Easy/pkg_data.txt
+
+    # Example for existing available data
+    #wget -O /data/pkg_data.txt https://figshare.com/ndownloader/files/34645619
+    
+    # How to get code via git
+    git https://github.com/jeffduda/GetYourBrainPipelined.git /opt/repos/GetYourBrainPipelined
+
 
 # This does not work with a remote build instead we use
 # wget in the %post section. If building on your own 
