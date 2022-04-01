@@ -7,7 +7,7 @@ From: ubuntu:latest
 
 %post
     apt-get update
-    apt-get install -y cowsay
+    apt-get install -y cowsay wget
     mkdir /data
     wget -O /data/pkg_data.txt https://figshare.com/ndownloader/files/34645619
 
