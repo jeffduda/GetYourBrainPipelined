@@ -3,6 +3,10 @@ Example scripts for setting up a brain processing pipeline
 
 
 # Running on BIL
+Make sure you have a Syslabs.io account and remote toke setup as desribed in the previous tutorial
+https://hackmd.io/@biomed-apps/B1B8mQCb5#Singularity
+
+
 from you home directory
 
 Get a repo, build a singularity image remotely, and run it
@@ -28,8 +32,13 @@ echo 'cowsay $a' >> data/script.sh
 singularity exec -B /bil/users/jtduda/data:/data example-easy.sif sh /data/script.sh /data/data.txt
 ```
 
-
-
+Now build an container that does some example registration. This may take 10min or so.
+```
+singularity build --remote example-reg.sif GetYourBrainPipelined/Example-Registration/Singularity
+mkdir data_input
+mkdir data_output
+singularity exec -B /bil/users/jtduda/data_input:/data/input -B /bil/users/jtduda/data_output:/data/output example-reg.sif /opt/scripts/example.sh
+```
 
 
 
