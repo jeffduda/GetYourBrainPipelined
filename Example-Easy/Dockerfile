@@ -12,7 +12,7 @@ RUN apt-get update \
 
 RUN git clone https://github.com/jeffduda/GetYourBrainPipelined.git /opt/repos/GetYourBrainPipelined \
     && cp /opt/repos/GetYourBrainPipelined/Example-Easy/pkg_data.txt /data/input/. \
-    && cp /opt/repos/GetYourBrainPipelined/Example-Easy/cow_script.sh /data/input/. \
+    && cp /opt/repos/GetYourBrainPipelined/Example-Easy/cow_script.sh /opt/scripts/. \
     && chmod a+x /data/input/cow_script.sh
     #&& wget --no-check-certificate -O /data/input/pkg_data.txt https://download.brainimagelibrary.org/hackathon/2022_GYBS/src/Tutorials/GetYourBrainPipelined/Example-Easy/pkg_data.txt \
 
