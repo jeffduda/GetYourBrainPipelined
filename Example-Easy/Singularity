@@ -11,11 +11,12 @@ From: ubuntu:latest
     mkdir /data
     wget -O /data/pkg_data.txt https://figshare.com/ndownloader/files/34645619
 
-%setup 
-    touch pkg_data.txt
-
+# This does not work with a remote build instead we use
+# wget in the %post section. If building on your own 
+# system this would be the preferred way to include 
+# data in the container
 #%files
-#    pkg_data.txt /opt
+#    pkg_data.txt /data
 
 %runscript
     cowsay "Hello Example-Easy"
