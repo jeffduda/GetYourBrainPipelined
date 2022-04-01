@@ -14,7 +14,7 @@ From: ubuntu:latest
 
     # Get data from BIL to add to repo
     # Directories starting at https://download.brainimagelibrary.org/hackathon/2022_GYBS are web-accessible
-    wget -O /data_input/pkg_data.txt https://download.brainimagelibrary.org/hackathon/2022_GYBS/src/Tutorials/GetYourBrainPipelined/Example-Easy/pkg_data.txt
+    wget -O /data/input/pkg_data.txt https://download.brainimagelibrary.org/hackathon/2022_GYBS/src/Tutorials/GetYourBrainPipelined/Example-Easy/pkg_data.txt
     
     # How to get code/files via git
     git clone https://github.com/jeffduda/GetYourBrainPipelined.git /opt/repos/GetYourBrainPipelined
