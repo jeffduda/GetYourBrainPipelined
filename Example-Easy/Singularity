@@ -6,16 +6,16 @@ From: ubuntu:latest
     export PATH=/usr/games:$PATH
 
 %post
-    apt update
-    apt install -y cowsay
+    apt-get update
+    apt-get install -y cowsay
     mkdir /data
-    echo "package data" > /opt/pkg_data.txt
+    wget -O /data/pkg_data.txt https://figshare.com/ndownloader/files/34645619
 
 %setup 
     touch pkg_data.txt
 
-%files
-    pkg_data.txt /opt
+#%files
+#    pkg_data.txt /opt
 
 %runscript
     cowsay "Hello Example-Easy"
