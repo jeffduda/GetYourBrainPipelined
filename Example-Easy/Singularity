@@ -10,7 +10,7 @@ From: ubuntu:latest
 %post
     apt-get update
     apt-get install -y cowsay wget git
-    mkdir -p $INPUT_DIR $OUTPUT_DIR /opt/repos /opt/scripts
+    mkdir -p /data/input /data/output /opt/repos /opt/scripts
 
     # Get data from BIL to add to repo
     # Directories starting at https://download.brainimagelibrary.org/hackathon/2022_GYBS are web-accessible
