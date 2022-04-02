@@ -19,8 +19,14 @@ singularity run example-easy.sif
 
 Use that singularity image to run a command in the container
 ```
-singularity exec example-easy.sif cowsay "exec Example-Easy"
+singularity exec example-easy.sif cowsay "Exec Example-Easy"
 ```
+
+Use the container to run a script and data that we included in the container
+```
+singularity exec example-easy.sif /opt/scripts/cow_script.sh /data/input/pkg_data.txt
+```
+
 
 Use the container to run a locally defined scripts that access local information
 ```
